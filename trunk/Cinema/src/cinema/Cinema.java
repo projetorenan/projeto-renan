@@ -21,12 +21,18 @@ public class Cinema {
         // TODO code application logic here
         // Joptionpane
         
-        Filme f = new Filme(); 
+        String nome;
+        String genero;
+        String nomeator;
+        String anonas,ganhou;
+        String nacionalidade;
+        float durac,cache,ganhos;
+        boolean vencedoroscar;
+        int classif,idad,totalf,totalfa;
         
-        String nome, genero, ator; 
-        Float duracao;
-        Integer classificacao, idade;
-        
+        Filme f = new Filme();
+        Ator a = new Ator();
+       
         //Entrada de dados 
         nome = JOptionPane.showInputDialog("Digite o nome do filme");
         f.atribuirnome(nome);
@@ -34,21 +40,62 @@ public class Cinema {
         genero = JOptionPane.showInputDialog("Digite o genero do filme");
         f.atribuirgenero(genero);
         
-        duracao = Float.parseFloat(JOptionPane.showInputDialog("Digite a duração do filme"));
-        f.atribuirduracao(duracao);
+        durac = Float.parseFloat(JOptionPane.showInputDialog("Digite a duração do filme"));
+        f.atribuirduracao(durac);
         
-        ator = JOptionPane.showInputDialog("Digite o ator do filme");
-        f.atribuirator(ator);
+        nomeator = JOptionPane.showInputDialog("Digite o ator do filme");
+        f.atribuirator(nomeator);
         
-        classificacao = Integer.parseInt(JOptionPane.showInputDialog("Digite a classificação do filme"));
-        f.atribuirclassificacao(classificacao);
+        classif = Integer.parseInt(JOptionPane.showInputDialog("Digite a classificação do filme"));
+        f.atribuirclassificacao(classif);
         
-        idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade"));
-        f.atribuiridade(idade);
+        idad = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade"));
+        f.atribuiridade(idad);
+    
+        JOptionPane.showMessageDialog(null,"   Dados do filme \n" + " Nome do filme:"+ f.retornarnome() + "\n Duração do filme:" + f.retornarduracao() + " minutos"+ " \n ClassificaÃ§Ã£o do filme: "+ f.retornarclassificacao()+ " anos"+"\n Genero do filme : "+ f.retornargenero());
         
-        //Saida 
-        JOptionPane.showMessageDialog(null, "Filme: " + nome + "\nGenero: " + genero + "\nDuração: " + duracao + " min\nAtor: " + ator + "\nClassificação: " + classificacao);
-     
+        
+        
+        nomeator=JOptionPane.showInputDialog("Digite o nome do ator");
+        a.AtribuirNome(nomeator);
+        
+        anonas=JOptionPane.showInputDialog("Digite o ano de nascimnento do ator");
+        a.AtribuirDatanas(anonas);
+        
+        cache=Float.parseFloat(JOptionPane.showInputDialog("Digite o cache do ator"));
+        a.AtribuirCache(cache);
+        
+        nacionalidade=JOptionPane.showInputDialog("Digite a nacionalidade do ator");
+        a.AtribuirNacionalidade(nacionalidade);
+        
+        ganhou = JOptionPane.showInputDialog("Ganhou o oscar(S/N):");
+      
+        if(ganhou.equals("S"))
+       {
+           a.atribuirVencedorOscar(true);
+       }
+       else
+       {
+           a.atribuirVencedorOscar(false);
+       }
+       
+          
+       if(a.retornarVencedorOscar()==true)
+       {
+           ganhou = "Sim";
+       }
+       else
+       {
+           ganhou = "Nao";
+       }
+        
+        totalf=Integer.parseInt(JOptionPane.showInputDialog("Digite o total de filmes do ator:"));
+        a.atribuirTotalFimes(totalf);
+        
+        totalfa=Integer.parseInt(JOptionPane.showInputDialog("Digite o total de filmes do ator no ultimo ano:"));
+        a.atribuirTotalFilmesA(totalfa);
+        
+        JOptionPane.showMessageDialog(null," Nome do ator: "+a.retornarNome()+"\n Ano de nascimento do ator: "+a.retornarDatanas()+"\n Cache do ator: "+a.retornarCache()+"\n Nacionalidade do ator: "+a.retornarNacionalidade()+"\n Total de filmes: "+a.retornarTotalFilmes()+"\n Total de filmes do ultimo ano: "+a.retornarTotalFilmesA()+"\nOs ganhos do ator foi de: "+a.retornarganhosator());
         
     }
     
