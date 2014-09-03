@@ -70,10 +70,10 @@ public class Filme {
         boolean midade = classificacao < idade;
         
         if (midade == false){
-            JOptionPane.showMessageDialog(null,"Voce pode assistir este filme");
+            JOptionPane.showMessageDialog(null,"Voce nao pode assistir este filme");
         }
         else{
-            JOptionPane.showMessageDialog(null,"Voce nao pode assistir este filme");
+            JOptionPane.showMessageDialog(null,"Voce pode assistir este filme");
         }
     }
     Integer retornaridade ()
