@@ -2,7 +2,7 @@ package caixaeletronico;
 
 public class Banco {
     
-    String nome, numero, sim="Sim", não="Não";
+    String nome, numero;
     Boolean empretimoimovel, emprestimocarro; 
 
     public String getNome() {
@@ -21,35 +21,22 @@ public class Banco {
         this.numero = numero;
     }
 
-    public String isEmpretimoimovel() {
-        if (empretimoimovel == true)
-        {
-            return sim;
-        }
-        else
-        {
-            return não;
-        }
+    public Boolean isEmpretimoimovel() {
+        return empretimoimovel;
     }
 
     public void setEmpretimoimovel(Boolean empretimoimovel) {
         this.empretimoimovel = empretimoimovel;
     }
 
-    public String isEmprestimocarro() {
-        if (emprestimocarro == true)
-        {
-            return sim;
-        }
-        else
-        {
-            return não;
-        }
+    public Boolean isEmprestimocarro() {
+        return emprestimocarro;
     }
 
     public void setEmprestimocarro(Boolean emprestimocarro) {
         this.emprestimocarro = emprestimocarro;
     }
+
     
     
 }

@@ -24,8 +24,7 @@ public class CaixaEletronico {
           JOptionPane.showMessageDialog(null , "Depósito não realizado ")  ;  
         }
         
-       
-        
+      
         deucerto = c.sacar(5.0);
         
         if (deucerto == true)
@@ -46,6 +45,23 @@ public class CaixaEletronico {
        b.getNumero();
        
        emprestimoimovel = Boolean.parseBoolean(JOptionPane.showInputDialog(null, "Oferece emprestimo Imovel (Sim ou Não)"));
+       
+       if (emprestimoimovel.equals("Sim"))
+       {
+           b.setEmpretimoimovel(true);
+       }
+       else
+       {
+           b.setEmpretimoimovel(false);
+       }
+       if(b.isEmpretimoimovel()==true)
+       {
+                       
+       }
+       else
+       {
+           
+       }
        
        emprestimocarro = Boolean.parseBoolean(JOptionPane.showInputDialog(null, "Oferece emprestimo Carro (Sim ou Não)"));
        
