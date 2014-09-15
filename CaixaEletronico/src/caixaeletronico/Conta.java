@@ -7,7 +7,35 @@ public class Conta {
     private String agencia, numeroconta, nomecorrentista;
     private Double saldo; 
     private Boolean ativa;
+    
+    public Conta()
+    {
+        saldo = 0.0;
+        agencia = null;
+        nomecorrentista = null;
+        numeroconta = null;
+        ativa = false;
+    }
 
+    
+    
+    
+    
+    
+    public Double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+    }
+
+    
+    
+    
+    
+    
+    
     public String getAgencia() {
         return agencia;
     }
