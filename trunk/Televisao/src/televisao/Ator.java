@@ -13,8 +13,8 @@ package televisao;
 public class Ator {
     
     private String nome, datadenas, email, nomea, cidade, endereco, bairro, estado, status;
-    private Integer quantn;
-    private Double salario, cache;
+    private Integer quantn, quante;
+    private Double salario, cache, ganhos;
 
     public String getNome() {
         return nome;
@@ -96,12 +96,32 @@ public class Ator {
         this.salario = salario;
     }
 
+    public Integer getQuante() {
+        return quante;
+    }
+
+    public void setQuante(Integer quante) {
+        this.quante = quante;
+    }
+
     public Double getCache() {
+        
         return cache;
     }
 
     public void setCache(Double cache) {
         this.cache = cache;
+    }
+
+    public Double getGanhos() {
+        
+        ganhos = (cache * quante) + salario;
+        
+        return ganhos;
+    }
+
+    public void setGanhos(Double ganhos) {
+        this.ganhos = ganhos;
     }
 
     public String getStatus() {
