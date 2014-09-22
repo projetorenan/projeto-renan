@@ -11,5 +11,39 @@ package televisao;
  * @author Aluno
  */
 public class Emissora {
+    String nomee, enderecoe, exidicao; 
+    
+    public Emissora()
+    {
+        nomee = null;
+        enderecoe = null;
+        exidicao = "TV Fechada";
+    }
+
+    public String getNomee() {
+        return nomee;
+    }
+
+    public void setNomee(String nomee) {
+        this.nomee = nomee;
+    }
+
+    public String getEnderecoe() {
+        return enderecoe;
+    }
+
+    public void setEnderecoe(String enderecoe) {
+        this.enderecoe = enderecoe;
+    }
+
+    public String getExidicao() {
+        return exidicao;
+    }
+
+    public void setExidicao(String exidicao) {
+        this.exidicao = exidicao;
+    }
+
+
     
 }
