@@ -335,7 +335,7 @@ public class EmissoraTela extends javax.swing.JFrame {
         }
         else 
         {
-            JOptionPane.showMessageDialog(null, "Acabo");
+            JOptionPane.showMessageDialog(null, "Não tem mais nada adiante");
         }
     }//GEN-LAST:event_btnanteriorActionPerformed
 
