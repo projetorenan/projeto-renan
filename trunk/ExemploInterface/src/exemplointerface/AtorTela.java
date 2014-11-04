@@ -8,6 +8,7 @@ package exemplointerface;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,7 +65,7 @@ public class AtorTela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtGanhos = new javax.swing.JTextField();
+        txtEndereco = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         botaoinserir = new javax.swing.JButton();
         botaolimpar = new javax.swing.JButton();
@@ -74,6 +75,8 @@ public class AtorTela extends javax.swing.JFrame {
         botaoanterior = new javax.swing.JButton();
         botaoproximo = new javax.swing.JButton();
         botaoultimo = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtGanhos = new javax.swing.JTextField();
 
         jButton1.setText("jButton1");
 
@@ -109,7 +112,7 @@ public class AtorTela extends javax.swing.JFrame {
 
         txtcidade.setText("Cidade:");
 
-        txtEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "RS", "SP", "RJ", "SC", "PR", "AM", "MG" }));
+        txtEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecionar", "RS", "SP" }));
         txtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEstadoActionPerformed(evt);
@@ -118,7 +121,7 @@ public class AtorTela extends javax.swing.JFrame {
 
         jLabel1.setText("Bairro:");
 
-        jLabel2.setText("Ganhos:");
+        jLabel2.setText("Endereço:");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Ações"));
 
@@ -130,12 +133,32 @@ public class AtorTela extends javax.swing.JFrame {
         });
 
         botaolimpar.setText("Limpar");
+        botaolimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaolimparActionPerformed(evt);
+            }
+        });
 
         botaoexcluir.setText("Excluir");
+        botaoexcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoexcluirActionPerformed(evt);
+            }
+        });
 
         botaoconsultar.setText("Consultar");
+        botaoconsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoconsultarActionPerformed(evt);
+            }
+        });
 
         botaoPrimeiro.setText("Primeiro");
+        botaoPrimeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPrimeiroActionPerformed(evt);
+            }
+        });
 
         botaoanterior.setText("Anterior");
 
@@ -183,8 +206,10 @@ public class AtorTela extends javax.swing.JFrame {
                     .addComponent(botaoanterior)
                     .addComponent(botaoproximo)
                     .addComponent(botaoultimo))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jLabel3.setText("Ganhos:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,19 +232,6 @@ public class AtorTela extends javax.swing.JFrame {
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtcidade)
-                                    .addComponent(txtestado)
-                                    .addComponent(jLabel2))
-                                .addGap(80, 80, 80)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBairro)
-                                    .addComponent(txtGanhos)
-                                    .addComponent(txtCidade, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtquantN)
                                     .addComponent(txtdatanasc)
                                     .addComponent(txtnome)
@@ -237,7 +249,22 @@ public class AtorTela extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(txtQuantN, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                    .addComponent(txtQuantN, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcidade)
+                                    .addComponent(txtestado)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(70, 70, 70)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtBairro)
+                                    .addComponent(txtEndereco)
+                                    .addComponent(txtCidade, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(txtGanhos))))))
                 .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
@@ -288,9 +315,13 @@ public class AtorTela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
+                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
                     .addComponent(txtGanhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -306,17 +337,102 @@ public class AtorTela extends javax.swing.JFrame {
         Ator ator = new Ator();
         
         ator.setBairro(txtBairro.getText());
+        ator.setNome(txtNome.getText());
+        ator.setNomea(txtNomeA.getText());
+        ator.setCidade(txtCidade.getText());
+        ator.setEndereco(txtEndereco.getText());
+        ator.setEmail(txtEmail.getText());
+        ator.setDatadenas(txtDataNasc.getText());
+        ator.setQuantn(Integer.parseInt(txtQuantN.getText()));
+        ator.setCache(Double.parseDouble(txtCache.getText()));
         ator.setSalario(Double.parseDouble(txtSalario.getText()));
         ator.setEstado(txtEstado.getSelectedItem().toString());
         
-        //Fazer o resto
-        lista.add(ator); 
+        
+        lista.add(ator);
+        Limpar();
     }//GEN-LAST:event_botaoinserirActionPerformed
 
     private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEstadoActionPerformed
 
+    private void botaoexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoexcluirActionPerformed
+        // TODO add your handling code here: Lista.remove(Lista.get(posicao));
+        lista.remove(lista.get(posicao)); 
+        Limpar(); 
+        
+    }//GEN-LAST:event_botaoexcluirActionPerformed
+
+    private void botaolimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaolimparActionPerformed
+        // TODO add your handling code here:
+        Limpar();
+    }//GEN-LAST:event_botaolimparActionPerformed
+
+    private void botaoconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoconsultarActionPerformed
+        // TODO add your handling code here:
+        String nome = JOptionPane.showInputDialog("Informe o nome do ator a ser consultado:");
+        
+        Boolean encontrou = false; 
+        
+        for (Ator ator : lista) {
+            if(nome.equalsIgnoreCase(ator.getNome()))
+            {
+                encontrou = true;
+                
+                break; 
+            }
+            
+        }
+        
+        if (encontrou == true)
+        {
+            JOptionPane.showMessageDialog(null, "Encontrado");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Não Encontrado");
+        }
+    }//GEN-LAST:event_botaoconsultarActionPerformed
+
+    private void botaoPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPrimeiroActionPerformed
+        // TODO add your handling code here:
+        if(lista.size()>0)
+        {
+            posicao = 0;
+            
+            Ator elemento = lista.get(0);
+            
+            txtBairro.setText(elemento.getBairro());
+            txtNome.setText(elemento.getNome());
+            txtNomeA.setText(elemento.getNomea());
+            txtCidade.setText(elemento.getCidade());
+            txtEndereco.setText(elemento.getEndereco());
+            txtEmail.setText(elemento.getEmail());
+            txtDataNasc.setText(elemento.getDatadenas());
+            txtCache.setText(elemento.getCache().toString());
+            txtSalario.setText(elemento.getSalario().toString());
+            txtQuantN.setText(elemento.getQuantn().toString());
+            
+            txtEstado.setSelectedIndex(0);
+            
+            
+        }
+    }//GEN-LAST:event_botaoPrimeiroActionPerformed
+    private void Limpar()
+    {
+        txtBairro.setText(null);
+        txtNome.setText(null);
+        txtNomeA.setText(null);
+        txtCidade.setText(null);
+        txtEndereco.setText(null);
+        txtEmail.setText(null);
+        txtDataNasc.setText(null);
+        txtCache.setText(null);
+        txtSalario.setText(null);
+        txtQuantN.setText(null);
+        txtEstado.setSelectedIndex(0);
+    }
     /**
      * @param args the command line arguments
      */
@@ -364,6 +480,7 @@ public class AtorTela extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
@@ -372,6 +489,7 @@ public class AtorTela extends javax.swing.JFrame {
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtDataNasc;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEndereco;
     private javax.swing.JComboBox txtEstado;
     private javax.swing.JTextField txtGanhos;
     private javax.swing.JTextField txtNome;
