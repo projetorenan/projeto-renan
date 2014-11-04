@@ -259,7 +259,7 @@ public class EmissoraTela extends javax.swing.JFrame {
         }
         Lista.add(obj);
         Limpar();
-        quant ++;
+        
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnprimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprimeiroActionPerformed
