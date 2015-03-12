@@ -16,8 +16,8 @@ import modelo.Pessoa;
  * @author Renan
  */
 public class PessoaTela extends javax.swing.JFrame {
-    List<Pessoa> lista;
-     private Integer posicao, ultimo;
+        List<Pessoa> lista;
+        private Integer posicao, ultimo;
 
     /**
      * Creates new form PessoaTela
